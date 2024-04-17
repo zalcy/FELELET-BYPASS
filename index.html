@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random szám generátor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    p, h1, label, button {
+        font-family: 'Montserrat';
+    }
+
+    p, label, input, button {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        font-size: 30px;
+    }
+    
+    #randomNumber {
+        font-size: 50px;
+        color: red;
+        font-weight: bold;
+    }
+    
+    input, button {
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: gainsboro;
+        color: black;
+    }
+</style>
+<script>
+    function generateRandomNumber() {
+    var min = parseInt(document.getElementById("minInput").value);
+    var max = parseInt(document.getElementById("maxInput").value);
+    if (min >= max) {
+        alert("A minimum értéknek kisebbnek kell lennie, mint a maximum értéknek.");
+        return;
+    }
+    
+    var randomNumber;
+    do {
+        if (randomNumber == 6) {
+            console.log(":-)");
+        }
+        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (randomNumber === 6);
+    
+    document.getElementById("randomNumber").innerHTML = "A generált véletlenszám: " + randomNumber;
+    }
+</script>
+<body>
+    <h1>
+        Véletlenszám generátor
+    </h1>
+    <label for="minInput">Minimum:</label>
+    <input type="number" id="minInput" value="1" min="1"><br><br>
+    <label for="maxInput">Maximum:</label>
+    <input type="number" id="maxInput" value="100" min="1"><br><br>
+    <button onclick="generateRandomNumber()">Véletlenszám generálása</button><br><br>
+    <p id="randomNumber"></p>
+</body>
+</html>
