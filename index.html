@@ -41,7 +41,8 @@
     }
 </style>
 <script>
-    function generateRandomNumber() {
+    
+function generateRandomNumber() {
     var min = parseInt(document.getElementById("minInput").value);
     var max = parseInt(document.getElementById("maxInput").value);
     if (min >= max) {
@@ -51,15 +52,14 @@
     
     var randomNumber;
     do {
-        if (randomNumber == 6 or randomNumber == 9 or randomnumber == 19) {
+        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (randomNumber === 6 || randomNumber === 9 || randomNumber === 19) {
             console.log(":-)");
         }
-        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     } while (randomNumber === 6);
     
     document.getElementById("randomNumber").innerHTML = "A generált véletlenszám: " + randomNumber;
-    }
-</script>
+}</script>
 <body>
     <h1>
         Véletlenszám generátor
