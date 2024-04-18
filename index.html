@@ -53,13 +53,11 @@ function generateRandomNumber() {
     var randomNumber;
     do {
         randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (randomNumber === 6 || randomNumber === 9 || randomNumber === 19) {
-            console.log(":-)");
-        }
-    } while (randomNumber === 6);
+    } while (randomNumber === 6 || randomNumber === 9 || randomNumber === 19);
     
     document.getElementById("randomNumber").innerHTML = "A generált véletlenszám: " + randomNumber;
-}</script>
+}
+</script>
 <body>
     <h1>
         Véletlenszám generátor
