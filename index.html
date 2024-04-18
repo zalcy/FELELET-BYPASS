@@ -53,7 +53,7 @@ function generateRandomNumber() {
     var randomNumber;
     do {
         randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    } while (randomNumber === 6 || randomNumber === 9 || randomNumber === 19);
+    } while (randomNumber === 6 || randomNumber === 9 || randomNumber === 19 || randomNumber === 16);
     
     document.getElementById("randomNumber").innerHTML = "A generált véletlenszám: " + randomNumber;
 }
