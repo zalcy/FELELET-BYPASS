@@ -52,8 +52,9 @@ function generateRandomNumber() {
     
     var randomNumber;
     do {
-if (randomNumber == 6 || randomNumber == 9 || randomNumber == 19) {
-break;};
+    if (randomNumber == 6 || randomNumber == 9 || randomNumber == 19) {
+        break;
+    }
         randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     } while (randomNumber === 6 || randomNumber === 9 || randomNumber === 19);
     
